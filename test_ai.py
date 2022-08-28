@@ -28,7 +28,7 @@ def multiply_string(click_streem, answer = False, csid=False, dtadd=False):
     hashes += words
     if answer:
         return csid, dt, hashes
-          
+    return hashes
 
 
 
