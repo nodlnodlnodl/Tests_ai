@@ -40,7 +40,7 @@ def oneorzero():
         click_streem = f.readline()
         if not click_streem:
             break
-        cid, dt, text = multiply_string(click_streem, csid=True, dtadd=True)
+        cid, dt, text = multiply_string(click_streem, answer= True, csid=True, dtadd=True)
         data = tokenizer.texts_to_sequences([text])
         dtpad = pad_sequences(data)
         res = model.predict(dtpad)  
