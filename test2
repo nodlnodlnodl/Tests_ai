@@ -1,0 +1,16 @@
+f = open('answer.csv', 'r')
+f_o = open('cup.csv', 'w')
+
+header = f.readline()
+f_o.write(header)
+while True:
+    line = f.readline()
+    if not line:
+        break
+    temp = line.split(',')
+    a1, a2 = temp[-1].split()
+    if a1 >= 0.5:
+        temp[-1] = 1
+    else:
+        temp[-1] = 0
+    f_o.write(','.join(temp)
