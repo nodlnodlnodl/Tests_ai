@@ -60,7 +60,7 @@ total_lines = count_true + count_false
 print(count_true, count_false, total_lines)
 
 
-maxWordsCount = 300
+maxWordsCount = 1000
 tokenizer = Tokenizer(num_words=maxWordsCount, lower=True, 
         filters=' ', split=', ', char_level=False)
 tokenizer.fit_on_texts([texts])
@@ -96,7 +96,7 @@ model.summary()
 
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=Adam(0.0001))
 
-history = model.fit(X, Y, batch_size=2048, epochs=2)
+history = model.fit(X, Y, batch_size=2048, epochs=5)
 
 reverse_word_map = dict(map(reversed, tokenizer.word_index.items()))
 
