@@ -12,7 +12,7 @@ hash_pattern = r'[a-z0-9]{32} +\d'
 word_pattern = r'\w{2,} +\d'
 
 def multiply_string(click_streem, answer = False, csid=False, dtadd=False):
-    _, _, string_of_words, string_of_hash = click_streem.split(',')
+    csid, dt, string_of_words, string_of_hash = click_streem.split(',')
     words = ''
     temp_words = re.findall(word_pattern, string_of_words)
     for word in temp_words:
@@ -27,12 +27,8 @@ def multiply_string(click_streem, answer = False, csid=False, dtadd=False):
             hashes += f'{letters}, '
     hashes += words
     if answer:
-        if csid:
-            if dtadd:
-                return csid, dt, hashes, res
-            return hashes, csid
-        return hashes, res
-    return hashes
+        return csid, dt, hashes
+          
 
 
 
