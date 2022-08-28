@@ -60,7 +60,7 @@ total_lines = count_true + count_false
 print(count_true, count_false, total_lines)
 
 
-maxWordsCount = 500
+maxWordsCount = 300
 tokenizer = Tokenizer(num_words=maxWordsCount, lower=True, 
         filters=' ', split=', ', char_level=False)
 tokenizer.fit_on_texts([texts])

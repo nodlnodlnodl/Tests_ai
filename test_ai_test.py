@@ -33,14 +33,14 @@ model = keras.models.load_model('vk_neyromodel')
 #model.open('vk_neyromodel')
 def oneorzero():
     output_f = open('answer.csv', 'w')
-    f = open('/dataset/test.csv', 'r')
+    f = open('./dataset/test.csv', 'r')
     f.readline()
     output_f.write('CLIENT_ID,RETRO_DT,DEF\n')
-    while True:
+    for _ in range(0,10000):
         click_streem = f.readline()
         if not click_streem:
             break
-        cid, dt, text, res = multiply_string(click_string, answer = True, csid=True, dtadd=True)
+        cid, dt, text, res = multiply_string(click_streem, answer = True, csid=True, dtadd=True)
         data = tokenizer.texts_to_sequences([text])
         dtpad = pad_sequences(data)
         res = model.predict(dtpad)  
